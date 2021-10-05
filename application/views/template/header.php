@@ -191,25 +191,18 @@
                        
                     </ul>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>profile"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="submissions">My Submissions</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Messages</span></a>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Notifications</span></a>
                 </li>
 
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Managment Tools</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="<?php echo base_url();?>users"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">User Management</span></a>
                         </li>
-                        <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">Other Settings</span></a>
-                            <ul class="menu-content">
-                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.1</span></a>
-                                </li>
-                                <li><a class="d-flex align-items-center" href="#"><span class="menu-item text-truncate" data-i18n="Third Level">Third Level 3.2</span></a>
-                                </li>
-                            </ul>
-                        </li>
+                       
                     </ul>
                 </li>
               
