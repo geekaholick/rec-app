@@ -76,6 +76,9 @@
                         </div>
                         <!--/ Statistics Card -->
                     </div>
+                    <?php 
+                        if($_SESSION['level']>1){
+                     ?>
                     <div class="row match-height">
                         <!-- Medal Card -->
                         <div class="col-xl-4 col-md-6 col-12">
@@ -151,6 +154,9 @@
                         </div>
                         <!--/ Statistics Card -->
                     </div>
+                    <?php
+                        }
+                    ?>
 
 </section>
 
