@@ -83,6 +83,9 @@
                                                             <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="<?php echo $userdetail->email; ?>" />
                                                         </div>
                                                     </div>
+
+                                                    <?php if($_SESSION['level']==4){
+                                                    ?>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-company">User Type</label>
@@ -94,6 +97,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <?php } ?>
                                                     <?php
                                                       if(isset($update)){
                                                           if($update){

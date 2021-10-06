@@ -25,8 +25,8 @@ class Profile extends Shared {
         	show_404();
         endif;
 
-        if(isset($_SESSION['userid'])){
-            $userdata=$this->UserModel->get_profile($_SESSION['userid']);
+        if(isset($_SESSION['user_id'])){
+            $userdata=$this->UserModel->get_profile($_SESSION['user_id']);
         }else{
             $userdata=$this->UserModel->get_profile(10);
         }

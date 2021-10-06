@@ -62,6 +62,8 @@ $route['delete_user']='user/delete';
 $route['profile']='profile';
 
 $route['login']='login';
+$route['login_user'] ='login/login_user';
+$route['logout'] ='login/logout';
 
 $route['register']='register';
 

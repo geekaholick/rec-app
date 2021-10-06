@@ -66,9 +66,16 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title font-weight-bold mb-1">Welcome to MyRec App! 👋</h2>
-                                <p class="card-text mb-2">Please sign-in to your account!</p>
-                                <form class="auth-login-form mt-2" action="<?php echo base_url(); ?>login" method="POST">
+                                <h2 class="card-title font-weight-bold mb-1">Welcome! </h2>
+                               
+                                <?php
+                                    if(!$update){
+                                        echo '<p class="card-text mb-2" style="color:red">Credential errors, please check!</p>';
+                                    }else{
+                                        echo '<p class="card-text mb-2">Please sign-in to your account!</p>';
+                                    }
+                                ?>
+                                <form class="auth-login-form mt-2" action="<?php echo base_url(); ?>login_user" method="POST">
                                     <div class="form-group">
                                         <label class="form-label" for="login-email">Username</label>
                                         <input class="form-control" id="login-email" type="text" name="username" placeholder="" aria-describedby="login-email" autofocus="" tabindex="1" />

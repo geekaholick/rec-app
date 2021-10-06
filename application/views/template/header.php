@@ -65,7 +65,7 @@
 
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none">
-                        Hi, Glenn! &nbsp; <a class="btn btn-danger btn-block" href="<?php echo base_url(); ?>login"> <i class="mr-50" data-feather="power" ></i> Logout</a>
+                        Hi, <?php  echo $_SESSION['name'];?>! &nbsp; <a class="btn btn-danger btn-block" href="<?php echo base_url(); ?>logout"> <i class="mr-50" data-feather="power" ></i> Logout</a>
                     </div>
                 </li>
             </ul>
@@ -95,6 +95,8 @@
 
                 <li class=" navigation-header"><span data-i18n="Apps &amp; Pages"> Menu </span><i data-feather="more-horizontal"></i>
                 </li>
+                <?php if($_SESSION['level']>1){
+                ?>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Review Items</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="#"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">All</span></a>
@@ -106,6 +108,9 @@
                        
                     </ul>
                 </li>
+                <?php
+                }
+                ?>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>profile"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="submissions">My Submissions</span></a>
@@ -113,6 +118,8 @@
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="mail"></i><span class="menu-title text-truncate" data-i18n="Email">Notifications</span></a>
                 </li>
 
+                <?php if($_SESSION['level']==4){
+                ?>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Managment Tools</span></a>
                     <ul class="menu-content">
                         <li><a class="d-flex align-items-center" href="<?php echo base_url();?>users"><i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Second Level">User Management</span></a>
@@ -120,6 +127,10 @@
                        
                     </ul>
                 </li> 
+                <?php
+                }
+                ?>
+                
              
             </ul>
         </div>
