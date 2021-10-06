@@ -191,6 +191,7 @@
                        
                     </ul>
                 </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>protocols"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Protocol</span></a></li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="submissions">My Submissions</span></a>
@@ -223,14 +224,6 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper container-xxl p-0">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-                <!-- Dashboard Ecommerce Starts -->
-                <section id="dashboard-ecommerce">
+    
 
 <!-- end of header content here -->

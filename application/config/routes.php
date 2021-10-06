@@ -57,4 +57,7 @@ $route['add_user']='user/create';
 $route['update_user']='user/update';
 $route['delete_user']='user/delete';
 
+$route['protocols']='protocol';
+$route['get_protocols']='protocol/get_protocols';
+
 $route['translate_uri_dashes'] = FALSE;
