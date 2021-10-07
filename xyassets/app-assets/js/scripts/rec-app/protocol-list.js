@@ -134,10 +134,13 @@ $(function () {
                 {
                     text: 'Add New Protocol',
                     className: 'add-new btn btn-primary mt-50',
-                    attr: {
-                        'data-toggle': 'modal',
-                        'data-target': '#modals-slide-in'
+                    action: function ( e, dt, button, config ) {
+                        window.location.href = 'protocol/new';
                     },
+                    // attr: {
+                    //     'data-toggle': 'modal',
+                    //     'data-target': '#modals-slide-in'
+                    // },
                     init: function (api, node, config) {
                         $(node).removeClass('btn-secondary');
                     }
