@@ -42,6 +42,10 @@ class User extends Shared {
 	}
     public function create()
 	{
+		if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+		
         $data['title']='Users';
 
 
