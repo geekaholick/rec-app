@@ -18,7 +18,7 @@
                                                 <ol class="breadcrumb">
                                                     <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>">Home</a></li>
                                                     <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>users">User</a></li>
-                                                    <li class="breadcrumb-item active"> Account Settings</li>
+                                                    <li class="breadcrumb-item active"> Edit Account</li>
                                                 </ol>
                                             </div>
                                         </div>
