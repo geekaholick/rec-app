@@ -17,23 +17,28 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/charts/apexcharts.css">
-    <!--<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/extensions/toastr.min.css">-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/extensions/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/bordered-layout.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/components.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/dark-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/bordered-layout.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/themes/semi-dark-layout.min.css">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/core/menu/menu-types/vertical-menu.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/pages/dashboard-ecommerce.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/charts/chart-apex.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/extensions/ext-component-toastr.css"> -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/extensions/ext-component-toastr.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/forms/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/pages/app-user.min.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -111,7 +116,9 @@
                 <?php
                 }
                 ?>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>protocols"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Protocol</span></a></li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>profile"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
+
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="submissions">My Submissions</span></a>
                 </li>
@@ -138,14 +145,6 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
-        <div class="content-overlay"></div>
-        <div class="header-navbar-shadow"></div>
-        <div class="content-wrapper container-xxl p-0">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-                <!-- Dashboard Ecommerce Starts -->
-                <section id="dashboard-ecommerce">
+    
 
 <!-- end of header content here -->
