@@ -12,8 +12,17 @@ class Shared extends CI_Controller
 
 class Protocol extends Shared
 {
+    private function check_isvalidated(){
+		return ($this->session->userdata('validated'));
+	}
+    
     public function index($page='protocol/list')
 	{
+        if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+		
+
 		$data['title']='Protocol';
 
         //check if a file exist

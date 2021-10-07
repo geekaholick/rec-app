@@ -14,10 +14,16 @@ class Shared extends CI_Controller {
 }
 
 class Profile extends Shared {
-
+	private function check_isvalidated(){
+		return ($this->session->userdata('validated'));
+	}
 	
 	public function index($page='profile')
 	{
+		if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+		
 		$data['title']='Profile';
 
         //check if a file exist
