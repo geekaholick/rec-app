@@ -33,14 +33,6 @@ class UserModel extends CI_Model{
 		return $query->result();
 	}
 
-	public function get_profile($userid){
-		$this->db->select('*');
-		$this->db->from('user');
-		$this->db->where('userid',$userid);
-		$query = $this->db->get()->row();
-		return $query;
-	}
-
 
 	public function add_user(){
 		$retval=false;
