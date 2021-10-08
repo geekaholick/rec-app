@@ -72,5 +72,8 @@ $route['logout'] ='login/logout';
 
 $route['register']='register';
 
+$route['protocol-review']='application';
+$route['protocol-review/detail']='application/application_details';
+
 
 $route['translate_uri_dashes'] = FALSE;
