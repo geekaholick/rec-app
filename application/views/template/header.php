@@ -116,6 +116,7 @@
                 <?php
                 }
                 ?>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>protocol-review"><i data-feather="grid"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Protocol Review</span></a></li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>protocols"><i data-feather="menu"></i><span class="menu-title text-truncate" data-i18n="Menu Levels">Protocol</span></a></li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="<?php echo base_url();?>profile"><i data-feather='check-square'></i><span class="menu-title text-truncate" data-i18n="Profile">Profile</span></a>
 

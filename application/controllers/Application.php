@@ -14,7 +14,7 @@ class Shared extends CI_Controller {
 }
 
 
-class Applications extends Shared {
+class Application extends Shared {
 
 	public function index($page='applications')
 	{
