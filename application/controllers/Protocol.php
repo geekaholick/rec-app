@@ -57,7 +57,7 @@ class Protocol extends Shared
         // $this->load->view('template/header');
 		$this->load->view($page);
 		$this->load->view('template/footer');
-        $this->load->view('protocol/scripts');
+        $this->load->view('protocol/scripts-forms');
 	}
 
     public function get_protocols()

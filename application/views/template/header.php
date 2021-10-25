@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/forms/wizard/bs-stepper.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/vendors/css/forms/select/select2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -39,6 +41,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/extensions/ext-component-toastr.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/forms/form-validation.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/pages/app-user.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>xyassets/app-assets/css/plugins/forms/form-wizard.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
