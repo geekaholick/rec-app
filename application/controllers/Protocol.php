@@ -38,6 +38,28 @@ class Protocol extends Shared
         $this->load->view('protocol/scripts');
 	}
 
+    public function create($page='protocol/create')
+	{
+        if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+		
+
+		$data['title']='Create New Protocol';
+
+        //check if a file exist
+		if ( ! file_exists(APPPATH.'/views/'.$page.'.php')):
+        	show_404();
+        endif;
+
+
+		$this->load->view('template/header', $data);
+        // $this->load->view('template/header');
+		$this->load->view($page);
+		$this->load->view('template/footer');
+        $this->load->view('protocol/scripts');
+	}
+
     public function get_protocols()
     {
         $data['data'] = $this->ProtocolModel->get_protocols();
