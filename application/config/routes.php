@@ -61,7 +61,7 @@ $route['delete_user']='user/delete';
 
 
 $route['protocols']='protocol';
-$route['protocol/new']='protocol/new';
+$route['protocol/new']='protocol/create';
 $route['get_protocols']='protocol/get_protocols';
 
 $route['profile']='profile';
