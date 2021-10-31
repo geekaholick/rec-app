@@ -9,7 +9,7 @@ class LoginModel extends CI_Model{
 
 		$this->db->select('*');
 		$this->db->from('user');
-		$this->db->where('username',$this->input->post('username'));
+		$this->db->where('email',$this->input->post('email'));
 		//$this->db->where('status','active');
 
 		$query = $this->db->get();

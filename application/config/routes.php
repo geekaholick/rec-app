@@ -60,8 +60,9 @@ $route['update_user']='user/update';
 $route['delete_user']='user/delete';
 
 
-$route['protocols']='protocol';
+$route['protocol']='protocol';
 $route['protocol/new']='protocol/create';
+$route['protocols']='protocol/create_protocol';
 $route['get_protocols']='protocol/get_protocols';
 
 $route['profile']='profile';

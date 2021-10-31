@@ -17,10 +17,10 @@ $(function () {
             // ajax: assetPath + 'data/rec-app/protocol-list-data.json',
             ajax: 'get_protocols',
             columns: [
-                { data: 'id' },
-                { data: 'project_title' },
-                { data: 'study_type' },
+                { data: 'protocolKey' },
+                { data: 'title' },
                 { data: 'status' },
+                { data: 'review' },
                 { data: '' },
             ],
             columnDefs: [
@@ -41,40 +41,40 @@ $(function () {
                     targets: 1,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $title = full['project_title'];
+                        var $title = full['title'];
                         return '<div class="d-flex flex-column">' +
                             '<a href="' +
                             userView +
                             '" class="text-truncate"><span class="font-weight-bold">' +
-                            ($title.length > 80) ? $title.substr(0, 80-1) + '&hellip;' : $title +
+                            $title +
                             '</span></a></div>';
                     }
                 },
-                {
-                    // Type
-                    targets: 2,
-                    render: function (data, type, full, meta) {
-                        var $type = full['study_type'];
-                        var typeBadgeObj = {
-                            "Clinical Trial": feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary mr-50' }),
-                            "Clinical Trials": feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning mr-50' }),
-                            "Health Operations Research": feather.icons['database'].toSvg({ class: 'font-medium-3 text-success mr-50' }),
-                            "Social/Behavioral Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Public Health/Epidemiologic Research": feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger mr-50' }),
-                            "Biomedical Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Stem Cell Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Genetic Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                        };
-                        return "<span class='text-truncate align-middle'>" + typeBadgeObj[$type] + $type + '</span>';
-                    }
-                },
+                // {
+                //     // Type
+                //     targets: 2,
+                //     render: function (data, type, full, meta) {
+                //         var $type = full['studySite'];
+                //         var typeBadgeObj = {
+                //             "Clinical Trial": feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary mr-50' }),
+                //             "Clinical Trials": feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning mr-50' }),
+                //             "Health Operations Research": feather.icons['database'].toSvg({ class: 'font-medium-3 text-success mr-50' }),
+                //             "Social/Behavioral Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Public Health/Epidemiologic Research": feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger mr-50' }),
+                //             "Biomedical Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Stem Cell Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Genetic Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //         };
+                //         return "<span class='text-truncate align-middle'>" + typeBadgeObj[$type] + $type + '</span>';
+                //     }
+                // },
                 {
                     // Status
-                    targets: 3,
+                    targets: 2,
                     render: function (data, type, full, meta) {
                         var $status = full['status'];
 
-                        return (    
+                        return (
                             '<span class="badge badge-pill ' +
                             statusObj[$status].class +
                             '" text-capitalized>' +
@@ -134,7 +134,7 @@ $(function () {
                 {
                     text: 'Add New Protocol',
                     className: 'add-new btn btn-primary mt-50',
-                    action: function ( e, dt, button, config ) {
+                    action: function (e, dt, button, config) {
                         window.location.href = 'protocol/new';
                     },
                     // attr: {
@@ -180,27 +180,27 @@ $(function () {
             },
             initComplete: function () {
                 // Adding role filter once table initialized
-                this.api()
-                    .columns(2)
-                    .every(function () {
-                        var column = this;
-                        var select = $(
-                            '<select id="StudyType" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Study Type </option></select>'
-                        )
-                            .appendTo('.study_type')
-                            .on('change', function () {
-                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                                column.search(val ? '^' + val + '$' : '', true, false).draw();
-                            });
+                // this.api()
+                //     .columns(2)
+                //     .every(function () {
+                //         var column = this;
+                //         var select = $(
+                //             '<select id="StudyType" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Study Type </option></select>'
+                //         )
+                //             .appendTo('.study_type')
+                //             .on('change', function () {
+                //                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                //                 column.search(val ? '^' + val + '$' : '', true, false).draw();
+                //             });
 
-                        column
-                            .data()
-                            .unique()
-                            .sort()
-                            .each(function (d, j) {
-                                select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
-                            });
-                    });
+                //         column
+                //             .data()
+                //             .unique()
+                //             .sort()
+                //             .each(function (d, j) {
+                //                 select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
+                //             });
+                //     });
                 // Adding status filter once table initialized
                 this.api()
                     .columns(3)

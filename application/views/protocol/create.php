@@ -4,308 +4,157 @@
     <div class="content-wrapper container-xxl p-0">
         <div class="content-header row"></div>
         <div class="content-body">
-            <!-- Modern Vertical Wizard -->
-        <section class="modern-vertical-wizard">
-                    <div class="bs-stepper vertical wizard-modern modern-vertical-wizard-example">
-                        <div class="bs-stepper-header">
-                            <div class="step" data-target="#account-details-vertical-modern">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">
-                                        <i data-feather="file-text" class="font-medium-3"></i>
-                                    </span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Application</span>
-                                        <span class="bs-stepper-subtitle">Form 32</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="step" data-target="#personal-info-vertical-modern">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">
-                                        <i data-feather="user" class="font-medium-3"></i>
-                                    </span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Personal Info</span>
-                                        <span class="bs-stepper-subtitle">Add Personal Info</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="step" data-target="#address-step-vertical-modern">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">
-                                        <i data-feather="map-pin" class="font-medium-3"></i>
-                                    </span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Address</span>
-                                        <span class="bs-stepper-subtitle">Add Address</span>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="step" data-target="#social-links-vertical-modern">
-                                <button type="button" class="step-trigger">
-                                    <span class="bs-stepper-box">
-                                        <i data-feather="link" class="font-medium-3"></i>
-                                    </span>
-                                    <span class="bs-stepper-label">
-                                        <span class="bs-stepper-title">Social Links</span>
-                                        <span class="bs-stepper-subtitle">Add Social Links</span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="bs-stepper-content">
-                            <div id="account-details-vertical-modern" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Section A1</h5>
-                                    <small class="text-muted">Application Details.</small>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label" for="vertical-modern-username">Project Title: </label>
-                                        <input type="text" id="vertical-modern-username" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label class="form-label" for="vertical-modern-email">Type of Study: </label>
-                                        <input type="text" id="vertical-modern-email" class="form-control" placeholder="" aria-label="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label class="form-label" for="vertical-modern-password">Proposed Start Date: </label>
-                                        <input type="text" id="vertical-modern-password" class="form-control" placeholder="" />
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label class="form-label" for="vertical-modern-confirm-password">Proposed End Date: </label>
-                                        <input type="text" id="vertical-modern-confirm-password" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label class="form-label" for="vertical-modern-password">Expected Number of Participants: </label>
-                                        <input type="text" id="vertical-modern-password" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label" for="vertical-modern-password">Study Site: </label>
-                                        <input type="text" id="vertical-modern-password" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label" for="vertical-modern-confirm-password">Source(s) of Funds: </label>
-                                        <input type="text" id="vertical-modern-confirm-password" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="content-header">
-                                    <h5 class="mb-0">Section A2</h5>
-                                    <small class="text-muted">Researcher(s)/Proponent(s) Details</small>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label class="form-label" for="vertical-modern-confirm-password">Names: </label>
-                                        <input type="text" id="vertical-modern-confirm-password" class="form-control" placeholder="" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                        <!-- Invoice repeater -->
+            <!-- Basic multiple Column Form section start -->
+            <section id="multiple-column-form">
+                <form class="form needs-validation" method="POST" action="<?php echo base_url(); ?>protocols" novalidate>
+                    <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Invoice</h4>
+                                    <h4 class="card-title">Application Details</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="#" class="invoice-repeater">
-                                        <div data-repeater-list="invoice">
-                                            <div data-repeater-item>
-                                                <div class="row d-flex align-items-end">
-                                                    <div class="col-md-4 col-12">
-                                                        <div class="form-group">
-                                                            <label for="itemname">Researcher Full Name</label>
-                                                            <input type="text" class="form-control" id="itemname" aria-describedby="itemname" placeholder="Vuexy Admin Template" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2 col-12">
-                                                        <div class="form-group">
-                                                            <label for="itemcost">Position Held</label>
-                                                            <input type="number" class="form-control" id="itemcost" aria-describedby="itemcost" placeholder="32" />
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="col-md-2 col-12">
-                                                        <div class="form-group">
-                                                            <label for="itemquantity">Quantity</label>
-                                                            <input type="number" class="form-control" id="itemquantity" aria-describedby="itemquantity" placeholder="1" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-2 col-12">
-                                                        <div class="form-group">
-                                                            <label for="staticprice">Price</label>
-                                                            <input type="text" readonly class="form-control-plaintext" id="staticprice" value="$32" />
-                                                        </div>
-                                                    </div> -->
-
-                                                    <div class="col-md-2 col-12 mb-50">
-                                                        <div class="form-group">
-                                                            <button class="btn btn-outline-danger text-nowrap px-1" data-repeater-delete type="button">
-                                                                <i data-feather="x" class="mr-25"></i>
-                                                                <span>Delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr />
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <div class="form-group">
+                                                <label for="project-title">Project Title</label>
+                                                <input type="text" id="project-title" class="form-control" name="title-column" required/>
+                                                <div class="valid-feedback">Looks good!</div>
+                                                <div class="invalid-feedback">Please enter your project title.</div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <button class="btn btn-icon btn-primary" type="button" data-repeater-create>
-                                                    <i data-feather="plus" class="mr-25"></i>
-                                                    <span>Add New</span>
-                                                </button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-7 col-12 mb-1">
+                                            <label>Study Type (Select all that applies)</label>
+                                            <select class="select2 form-control" multiple required>
+                                                <?php
+                                                    $i = 0;
+                                                    foreach ($study_types as $study_type):
+                                                ?>
+                                                <option value="<?=$study_type->fieldKey;?>"><?=$study_type->description;?></option>
+                                                <?php endforeach;?>
+                                            </select>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please select at least one.</div>
+                                        </div>
+                                        <div class="col-md-4 col-12 mb-1">
+                                            <div class="form-group">
+                                                <label for="study-type-other">Others</label>
+                                                <input type="text" id="study-type-other" class="form-control" placeholder="Others" name="study-type-column" />
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Invoice repeater -->
-</div>
-
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-outline-secondary btn-prev" disabled>
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="personal-info-vertical-modern" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Personal Info</h5>
-                                    <small>Enter Your Personal Info.</small>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-first-name">First Name</label>
-                                        <input type="text" id="vertical-modern-first-name" class="form-control" placeholder="John" />
+                                        <div class="col-md-1 col-12 mb-1">
+                                            <label></label> <br/>
+                                            <button type="button" class="btn btn-icon btn-warning">
+                                                <i data-feather="inbox"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-last-name">Last Name</label>
-                                        <input type="text" id="vertical-modern-last-name" class="form-control" placeholder="Doe" />
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 form-group">
+                                            <label for="start-date">Proposed Start Date</label>
+                                            <input type="text" id="start-date" class="form-control pickadate-months-year" placeholder="" required/>
+                                        </div>
+                                        <div class="col-12 col-md-4 form-group">
+                                            <label for="end-date">Proposed End Date</label>
+                                            <input type="text" id="end-date" class="form-control pickadate-months-year" placeholder="" required/>
+                                        </div>
+                                        <div class="col-md-4 col-12 form-group">
+                                            <label for="participants">Expected No. of Participant</label>
+                                            <input type="text" id="participants" class="form-control" name="country-floating" placeholder="0" required/>  
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-country">Country</label>
-                                        <select class="select2 w-100" id="vertical-modern-country">
-                                            <option label=" "></option>
-                                            <option>UK</option>
-                                            <option>USA</option>
-                                            <option>Spain</option>
-                                            <option>France</option>
-                                            <option>Italy</option>
-                                            <option>Australia</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 form-group">
+                                            <label for="study-site">Study Site</label>
+                                            <input type="text" id="study-site" class="form-control" name="study-site-column" placeholder="" required/>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please enter study site.</div>
+                                        </div>
+                                        <div class="col-md-6 col-12 form-group">
+                                            <label for="funds">Source of Funds</label>
+                                            <input type="funds" id="email-id-column" class="form-control" name="funds-column" placeholder="" required/>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            <div class="invalid-feedback">Please enter source of funds.</div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-language">Language</label>
-                                        <select class="select2 w-100" id="vertical-modern-language" multiple>
-                                            <option>English</option>
-                                            <option>French</option>
-                                            <option>Spanish</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="address-step-vertical-modern" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Address</h5>
-                                    <small>Enter Your Address.</small>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-address">Address</label>
-                                        <input type="text" id="vertical-modern-address" class="form-control" placeholder="98  Borough bridge Road, Birmingham" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-landmark">Landmark</label>
-                                        <input type="text" id="vertical-modern-landmark" class="form-control" placeholder="Borough bridge" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="pincode4">Pincode</label>
-                                        <input type="text" id="pincode4" class="form-control" placeholder="658921" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="city4">City</label>
-                                        <input type="text" id="city4" class="form-control" placeholder="Birmingham" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-primary btn-next">
-                                        <span class="align-middle d-sm-inline-block d-none">Next</span>
-                                        <i data-feather="arrow-right" class="align-middle ml-sm-25 ml-0"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="social-links-vertical-modern" class="content">
-                                <div class="content-header">
-                                    <h5 class="mb-0">Social Links</h5>
-                                    <small>Enter Your Social Links.</small>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-twitter">Twitter</label>
-                                        <input type="text" id="vertical-modern-twitter" class="form-control" placeholder="https://twitter.com/abc" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-facebook">Facebook</label>
-                                        <input type="text" id="vertical-modern-facebook" class="form-control" placeholder="https://facebook.com/abc" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-google">Google+</label>
-                                        <input type="text" id="vertical-modern-google" class="form-control" placeholder="https://plus.google.com/abc" />
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label class="form-label" for="vertical-modern-linkedin">Linkedin</label>
-                                        <input type="text" id="vertical-modern-linkedin" class="form-control" placeholder="https://linkedin.com/abc" />
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <button class="btn btn-primary btn-prev">
-                                        <i data-feather="arrow-left" class="align-middle mr-sm-25 mr-0"></i>
-                                        <span class="align-middle d-sm-inline-block d-none">Previous</span>
-                                    </button>
-                                    <button class="btn btn-success btn-submit">Submit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- /Modern Vertical Wizard -->
+                    <!-- <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Researcher / Proponents Details</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                    <div class="col-md-7 col-12 mb-1">
+                                            <label>Researcher</label>
+                                            <select class="select2 form-control" multiple>
+                                                <?php
+                                                    $i = 0;
+                                                    foreach ($users as $user):
+                                                ?>
+                                                <option value="<?=$user->userid;?>"><?=$user->fname;?></option>
+                                                <?php endforeach;?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Mailing Information</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12 col-12 mb-1 custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked />
+                                            <label class="custom-control-label" for="customCheck1">Use the current user mailing list.</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-12 form-group">
+                                            <label for="mailing-address">Complete Address</label>
+                                            <input type="text" id="mailing-address" class="form-control" name="address-column" />
+                                        </div>
+                                        <div class="col-md-4 col-12 form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="email" class="form-control" name="email-column" />
+                                        </div>
+                                        <div class="col-md-4 col-12 form-group">
+                                            <label for="a-email">Aletrnative Email</label>
+                                            <input type="email" id="a-email" class="form-control" name="a-email-column" />
+                                        </div>
+                                        <div class="col-md-4 col-12 form-group">
+                                            <label for="mobile">Mobile Number</label>
+                                            <input type="email" id="mobile" class="form-control" name="mobile-column" />
+                                        </div>
+                                        <div class="col-md-4 col-12 form-group">
+                                            <label for="fax">Fax / Telephone</label>
+                                            <input type="email" id="fax" class="form-control" name="fax-column" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class = "row">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary mr-1">Submit</button>
+                            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <!-- Basic Floating Label Form section end -->
         </div>
     </div>
 </div>

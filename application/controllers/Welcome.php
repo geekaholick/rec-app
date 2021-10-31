@@ -15,9 +15,16 @@ class Shared extends CI_Controller {
 
 
 class Welcome extends Shared {
+	private function check_isvalidated(){
+		return ($this->session->userdata('validated'));
+	}
 
 	public function index($page='welcome_message')
 	{
+		if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+
 		$data['title']='Home';
 
 		if ( ! file_exists(APPPATH.'/views/'.$page.'.php')):

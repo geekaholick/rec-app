@@ -6,7 +6,12 @@
     <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/wizard/bs-stepper.min.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
-    <script src="<?php echo base_url(); ?>xyassets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -18,6 +23,9 @@
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-wizard.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-repeater.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-repeater.js"></script>
+    <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-validation.js"></script>
     <!-- END: Page JS-->
 
     <script>

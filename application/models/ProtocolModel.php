@@ -8,8 +8,8 @@ class ProtocolModel extends CI_Model
 
     public function get_protocols(){
 		$this->db->select('*');
-		$this->db->from('protocol');
-		$this->db->order_by("id", "asc");
+		$this->db->from('protocol_application');
+		$this->db->order_by("protocolKey", "asc");
 
 		$query = $this->db->get();
 		// $rows = array();
