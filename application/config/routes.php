@@ -74,6 +74,16 @@ $route['register']='register';
 
 $route['protocol-review']='application';
 $route['protocol-review/detail']='application/application_details';
+$route['protocol-review/capsule_proposal']='application/capsule_proposal';
+
+
+
+$route['protocol-review/data_privacy_consent']='application/data_privacy_consent';
+
+
+
+
+
 
 
 $route['translate_uri_dashes'] = FALSE;
