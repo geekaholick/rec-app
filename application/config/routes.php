@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'login';
 $route['404_override'] = '';
 
 $route['home'] = 'welcome';
@@ -59,11 +59,14 @@ $route['add_user']='user/create';
 $route['update_user']='user/update';
 $route['delete_user']='user/delete';
 
+$route['protocols']='protocols';                                // show protocols -> get_protocol_list
+$route['protocol/create']='protocols/create';                   // show create protocol form
+$route['protocol/edit/(:num)']='protocols/edit/$1';
+$route['protocol/save']='protocols/create_protocol';
 
-$route['protocol']='protocol';
-$route['protocol/new']='protocol/create';
-$route['protocols']='protocol/create_protocol';
-$route['get_protocols']='protocol/get_protocols';
+$route['get_protocol/(:any)']='protocol/get_protocol';
+$route['get_protocol_list']='protocols/get_protocol_list';
+$route['protocol/test/(:any)']='protocols/test';
 
 $route['profile']='profile';
 

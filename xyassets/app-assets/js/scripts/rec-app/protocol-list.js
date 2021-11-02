@@ -3,19 +3,23 @@ $(function () {
 
     var dtProtocolTable = $('.protocol-list-table'),
         statusObj = {
-            1: { title: 'Pending', class: 'badge-light-warning' },
-            2: { title: 'Active', class: 'badge-light-success' },
-            3: { title: 'Inactive', class: 'badge-light-secondary' }
+            1: { title: 'Draft', class: 'badge-light-secondary' },
+            2: { title: 'Ready', class: 'badge-light-warning' },
+            3: { title: 'Submitted', class: 'badge-light-primary' },
+            4: { title: 'Accepted', class: 'badge-light-primary' },
+            5: { title: 'On-review', class: 'badge-light-primary' },
+            6: { title: 'Done', class: 'badge-light-primary' },
+            7: { title: 'Resubmission', class: 'badge-light-primary' },
         };
 
     var assetPath = 'xyassets/app-assets/',
-        userView = 'list.php',
-        userEdit = 'list.php';
+        protocolView = 'protocol/edit/',
+        protocolEdit = 'protocol/edit/';
 
     if (dtProtocolTable.length) {
         dtProtocolTable.DataTable({
             // ajax: assetPath + 'data/rec-app/protocol-list-data.json',
-            ajax: 'get_protocols',
+            ajax: 'get_protocol_list',
             columns: [
                 { data: 'protocolKey' },
                 { data: 'title' },
@@ -42,9 +46,11 @@ $(function () {
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
                         var $title = full['title'];
+                        var $id = full['protocolKey'];
                         return '<div class="d-flex flex-column">' +
                             '<a href="' +
-                            userView +
+                            protocolView +
+                            $id +
                             '" class="text-truncate"><span class="font-weight-bold">' +
                             $title +
                             '</span></a></div>';
@@ -89,6 +95,7 @@ $(function () {
                     title: 'Actions',
                     orderable: false,
                     render: function (data, type, full, meta) {
+                        var $id = full['protocolKey'];
                         return (
                             '<div class="btn-group">' +
                             '<a class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">' +
@@ -96,12 +103,14 @@ $(function () {
                             '</a>' +
                             '<div class="dropdown-menu dropdown-menu-right">' +
                             '<a href="' +
-                            userView +
+                            protocolView +
+                            $id +
                             '" class="dropdown-item">' +
                             feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) +
                             'Details</a>' +
                             '<a href="' +
-                            userEdit +
+                            protocolEdit +
+                            $id +
                             '" class="dropdown-item">' +
                             feather.icons['archive'].toSvg({ class: 'font-small-4 mr-50' }) +
                             'Edit</a>' +
@@ -135,7 +144,7 @@ $(function () {
                     text: 'Add New Protocol',
                     className: 'add-new btn btn-primary mt-50',
                     action: function (e, dt, button, config) {
-                        window.location.href = 'protocol/new';
+                        window.location.href = 'protocol/create';
                     },
                     // attr: {
                     //     'data-toggle': 'modal',
@@ -203,7 +212,7 @@ $(function () {
                 //     });
                 // Adding status filter once table initialized
                 this.api()
-                    .columns(3)
+                    .columns(2)
                     .every(function () {
                         var column = this;
                         var select = $(
@@ -222,7 +231,7 @@ $(function () {
                             .each(function (d, j) {
                                 select.append(
                                     '<option value="' +
-                                    statusObj[d].title +
+                                    d +
                                     '" class="text-capitalize">' +
                                     statusObj[d].title +
                                     '</option>'

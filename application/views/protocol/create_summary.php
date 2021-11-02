@@ -12,182 +12,91 @@
                                 <div class="d-flex justify-content-between flex-md-row flex-column mt-0">
                                     <div>
                                         <h3 class="text-primary">Protocol Summary</h3>
+                                        <p class="card-text mb-25"><span class="font-weight-bold">PROJECT TITLE:<br/></span> <?=$protocol[0]->title;?></p>
+                                        
+                                    </div>
+                                    <div class="mt-md-0 mt-2">
+                                        <h4>
+                                            Protocol Number <span><?=$protocol[0]->protocolKey;?></span>
+                                        </h4>
+                                        <div>
+                                            <p>Status: <span class="badge badge-pill badge-glow badge-primary"><?=$protocol[0]->status;?></span></p>
+                                        </div>
                                     </div>
                                 </div>
-                                <p class="card-text mb-25"><span class="font-weight-bold">PROJECT TITLE:</span> The burning love of heart.</p>
-                                <p class="card-text mb-25">San Diego County, CA 91905, USA</p>
-                                <p class="card-text mb-0">+1 (123) 456 7891, +44 (876) 543 2198</p>
                             </div>
+                            <hr>
+                            <div class="card-body">
+                                <p class="card-text">List of information needed for the protocol submission.</p>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-6">Information</th>
+                                            <th class="col-3">Status</th>
+                                            <th class="col-3">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                            foreach ($information as $info):
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <!-- <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" /> -->
+                                                <span class="font-weight-bold"><?=$info->title;?></span>
+                                            </td>
+                                            <td><span class="<?=$info->class;?>"><?=$info->status;?></span></td>
+                                            <td>
+                                                <div>
+                                                    <a href="javascript:void(0);">
+                                                        <i data-feather="edit-2" class="mr-50"></i>Edit
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach;?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <hr>
                             <div class="card-body">
                                 <p class="card-text">
-                                    Add <code class="highlighter-rouge">.table-hover</code> to enable a hover state on table rows within a
-                                    <code class="highlighter-rouge">&lt;tbody&gt;</code>.
+                                    Form List.
                                 </p>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Project</th>
-                                            <th>Client</th>
-                                            <th>Users</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
+                                            <th class="col-6">Form</th>
+                                            <th class="col-3">Status</th>
+                                            <th class="col-3">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                            foreach ($forms as $form):
+                                        ?>
                                         <tr>
                                             <td>
-                                                <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" />
-                                                <span class="font-weight-bold">Angular Project</span>
+                                                <!-- <img src="../../../app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" /> -->
+                                                <span class="font-weight-bold"><?=$form->title;?></span>
                                             </td>
-                                            <td>Peter Charls</td>
+                                            <td><span class="<?=$form->class;?>"><?=$form->status;?></span></td>
                                             <td>
-                                                <div class="avatar-group">
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge badge-pill badge-light-primary mr-1">Active</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
+                                                <div>
+                                                    <div>
+                                                        <a href="javascript:void(0);">
+                                                            <i data-feather="eye" class="mr-50"></i>
+                                                            View
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../../../app-assets/images/icons/react.svg" class="mr-75" height="20" width="20" alt="React" />
-                                                <span class="font-weight-bold">React Project</span>
-                                            </td>
-                                            <td>Ronald Frest</td>
-                                            <td>
-                                                <div class="avatar-group">
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge badge-pill badge-light-success mr-1">Completed</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../../../app-assets/images/icons/vuejs.svg" class="mr-75" height="20" width="20" alt="Vuejs" />
-                                                <span class="font-weight-bold">Vuejs Project</span>
-                                            </td>
-                                            <td>Jack Obes</td>
-                                            <td>
-                                                <div class="avatar-group">
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge badge-pill badge-light-info mr-1">Scheduled</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="../../../app-assets/images/icons/bootstrap.svg" class="mr-75" height="20" width="20" alt="Bootstrap" />
-                                                <span class="font-weight-bold">Bootstrap Project</span>
-                                            </td>
-                                            <td>Jerry Milton</td>
-                                            <td>
-                                                <div class="avatar-group">
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Lilian Nenez">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-6.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                    <div data-toggle="tooltip" data-popup="tooltip-custom" data-placement="top" title="" class="avatar pull-up my-0" data-original-title="Alberto Glotzbach">
-                                                        <img src="../../../app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="26" width="26" />
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span class="badge badge-pill badge-light-warning mr-1">Pending</span></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>
@@ -199,16 +108,13 @@
                             <div class="card">
                                 <div class="card-body">
                                     <button class="btn btn-primary btn-block mb-75" data-toggle="modal" data-target="#send-invoice-sidebar">
-                                        Send Invoice
+                                        Submit Protocol 
                                     </button>
                                     <button class="btn btn-outline-secondary btn-block btn-download-invoice mb-75">Download</button>
                                     <a class="btn btn-outline-secondary btn-block mb-75" href="./app-invoice-print.html" target="_blank">
                                         Print
                                     </a>
-                                    <a class="btn btn-outline-secondary btn-block mb-75" href="./app-invoice-edit.html"> Edit </a>
-                                    <button class="btn btn-success btn-block" data-toggle="modal" data-target="#add-payment-sidebar">
-                                        Add Payment
-                                    </button>
+                                    <a class="btn btn-outline-secondary btn-block mb-75" href="./app-invoice-edit.html"> Delete </a>
                                 </div>
                             </div>
                         </div>
