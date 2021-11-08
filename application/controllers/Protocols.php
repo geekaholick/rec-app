@@ -77,37 +77,44 @@ class Protocols extends Shared
             (object) [
                 'title' => 'Project Details',
                 'status'=> 'Done',
-                'class' => 'badge badge-pill badge-light-success mr-1'
+                'class' => 'badge badge-pill badge-light-success mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'Project Collaborators (Researcher, Advisers)',
                 'status'=> 'No Collaborators',
-                'class' => 'badge badge-pill badge-light-warning mr-1'
+                'class' => 'badge badge-pill badge-light-warning mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'Project Budget Plan',
                 'status'=> 'None',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => 'protocol/budget/update/'.$id, 
             ],
             (object) [
                 'title' => 'Protocol Assessment (Project Leader)',
                 'status'=> 'None',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'Capsule Proposal',
                 'status'=> 'None',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'Ammendments',
                 'status'=> 'None',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'Other Supporting Documents',
                 'status'=> 'None',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
         );
 
@@ -202,6 +209,51 @@ class Protocols extends Shared
     {
         $data['data'] = $this->ProtocolModel->get_protocol_list();
         echo json_encode($data);
+    }
+
+    public function create_budget() 
+    {
+        $page='protocol/create_budget';
+
+        if (!$this->check_isvalidated()){
+			redirect('login','refresh');
+		}
+
+        //check if a file exist
+		if ( ! file_exists(APPPATH.'/views/'.$page.'.php')):
+        	show_404();
+            echo "Page not found?";
+        endif;
+
+        $data['title'] = 'Create Budget';
+        $data['section1'] = array(
+            (object) [
+                'particular' => 'Salaries',
+            ],
+            (object) [
+                'particular' => 'Honoraria',
+            ],
+        );
+        $data['section2'] = array(
+            (object) [
+                'particular' => 'Traveling expenses',
+            ],
+            (object) [
+                'particular' => 'Supplies and materials expenses',
+            ],
+            (object) [
+                'particular' => 'Incentive for the respondents',
+            ],
+            (object) [
+                'particular' => 'Ethics Review Fee',
+            ],
+        );
+
+
+        $this->load->view('template/header', $data);
+		$this->load->view($page);
+		$this->load->view('template/footer');
+        $this->load->view('protocol/scripts-forms');
     }
 
 }

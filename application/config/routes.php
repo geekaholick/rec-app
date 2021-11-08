@@ -63,6 +63,7 @@ $route['protocols']='protocols';                                // show protocol
 $route['protocol/create']='protocols/create';                   // show create protocol form
 $route['protocol/edit/(:num)']='protocols/edit/$1';
 $route['protocol/save']='protocols/create_protocol';
+$route['protocol/budget/update/(:num)']='protocols/create_budget/$1';
 
 $route['get_protocol/(:any)']='protocol/get_protocol';
 $route['get_protocol_list']='protocols/get_protocol_list';

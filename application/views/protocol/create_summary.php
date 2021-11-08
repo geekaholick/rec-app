@@ -50,7 +50,7 @@
                                             <td><span class="<?=$info->class;?>"><?=$info->status;?></span></td>
                                             <td>
                                                 <div>
-                                                    <a href="javascript:void(0);">
+                                                    <a href="<?php echo base_url().$info->link;?>">
                                                         <i data-feather="edit-2" class="mr-50"></i>Edit
                                                     </a>
                                                 </div>

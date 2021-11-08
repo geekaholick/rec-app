@@ -22,9 +22,7 @@
     <!-- BEGIN: Page JS-->
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-wizard.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-repeater.js"></script>
-    <script src="<?php echo base_url(); ?>xyassets/app-assets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/pickers/form-pickers.js"></script>
-    <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-repeater.js"></script>
     <script src="<?php echo base_url(); ?>xyassets/app-assets/js/scripts/forms/form-validation.js"></script>
     <!-- END: Page JS-->
 
