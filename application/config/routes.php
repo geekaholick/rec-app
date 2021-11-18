@@ -74,12 +74,15 @@ $route['register']='register';
 
 $route['protocol-review']='application';
 $route['protocol-review/detail']='application/application_details';
+
 $route['protocol-review/capsule_proposal']='application/capsule_proposal';
-
-
-
 $route['protocol-review/data_privacy_consent']='application/data_privacy_consent';
-
+$route['protocol-review/protocol_review_assessment']='application/protocol_review_assessment';
+$route['protocol-review/informed_consent_form']='application/informed_consent_form';
+$route['protocol-review/protocol_package_checklist']='application/protocol_package_checklist';
+$route['protocol-review/summary_of_protocols']='application/summary_of_protocols';
+$route['protocol-review/checklist_consideration_for_genetic_research']='application/checklist_consideration_for_genetic_research';
+$route['protocol-review/checklist_res_with_stud_emp_res']='application/checklist_res_with_stud_emp_res';
 
 
 
