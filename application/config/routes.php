@@ -82,3 +82,5 @@ $route['protocol-review/detail']='application/application_details';
 
 
 $route['translate_uri_dashes'] = FALSE;
+
+$route['protocol/view_form']='generatepdfcontroller';

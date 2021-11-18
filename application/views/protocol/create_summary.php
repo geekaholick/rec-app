@@ -88,7 +88,7 @@
                                             <td>
                                                 <div>
                                                     <div>
-                                                        <a href="javascript:void(0);">
+                                                        <a href="<?php echo base_url().$form->link;?>">
                                                             <i data-feather="eye" class="mr-50"></i>
                                                             View
                                                         </a>

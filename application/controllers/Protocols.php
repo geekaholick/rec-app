@@ -122,22 +122,26 @@ class Protocols extends Shared
             (object) [
                 'title' => 'USC REC F-31 Capsule Proposal Template',
                 'status'=> 'Empty',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => 'protocol/view_form'
             ],
             (object) [
                 'title' => 'USC REC F-32 Research Protocol Application Form',
                 'status'=> 'Partially Filled',
-                'class' => 'badge badge-pill badge-light-warning mr-1'
+                'class' => 'badge badge-pill badge-light-warning mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'USC REC F-33 Detailed Budget Form',
                 'status'=> 'Empty',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
             (object) [
                 'title' => 'USC REC F-34 Data Privacy Consent Form',
                 'status'=> 'Empty',
-                'class' => 'badge badge-pill badge-light-danger mr-1'
+                'class' => 'badge badge-pill badge-light-danger mr-1',
+                'link'  => '#'
             ],
         );
         
@@ -255,5 +259,26 @@ class Protocols extends Shared
 		$this->load->view('template/footer');
         $this->load->view('protocol/scripts-forms');
     }
+
+    // public function view_form()
+	// {
+    //     $page='protocol/view_form';
+
+    //     if (!$this->check_isvalidated()){
+	// 		redirect('login','refresh');
+	// 	}
+		
+	// 	$data['title']='Create New Protocol';
+    //     // $data['study_types'] = $this->StudyFieldModel->study_field();
+
+	// 	if ( ! file_exists(APPPATH.'/views/'.$page.'.php')):
+    //     	show_404();
+    //     endif;
+
+	// 	$this->load->view('template/header', $data);
+	// 	$this->load->view($page);
+	// 	$this->load->view('template/footer');
+    //     $this->load->view('protocol/scripts-forms');
+	// }
 
 }
