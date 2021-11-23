@@ -10,7 +10,7 @@
                         <div class="card-body border-bottom">
                             <h4 class="card-title">Search & Filter</h4>
                             <div class="row">
-                                <div class="col-md-4 study_type"></div>
+                                <!-- <div class="col-md-4 study_type"></div> -->
                                 <div class="col-md-4 protocol_status"></div>
                             </div>
                         </div>
@@ -20,8 +20,8 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>PROJECT TITLE</th>
-                                        <th>STUDY TYPE</th>
                                         <th>STATUS</th>
+                                        <th>REVIEW TYPE</th>
                                         <th>ACTIONS</th>
                                     </tr>
                                 </thead>

@@ -3,24 +3,28 @@ $(function () {
 
     var dtProtocolTable = $('.protocol-list-table'),
         statusObj = {
-            1: { title: 'Pending', class: 'badge-light-warning' },
-            2: { title: 'Active', class: 'badge-light-success' },
-            3: { title: 'Inactive', class: 'badge-light-secondary' }
+            1: { title: 'Draft', class: 'badge-light-secondary' },
+            2: { title: 'Ready', class: 'badge-light-warning' },
+            3: { title: 'Submitted', class: 'badge-light-primary' },
+            4: { title: 'Accepted', class: 'badge-light-primary' },
+            5: { title: 'On-review', class: 'badge-light-primary' },
+            6: { title: 'Done', class: 'badge-light-primary' },
+            7: { title: 'Resubmission', class: 'badge-light-primary' },
         };
 
     var assetPath = 'xyassets/app-assets/',
-        userView = 'list.php',
-        userEdit = 'list.php';
+        protocolView = 'protocol/edit/',
+        protocolEdit = 'protocol/edit/';
 
     if (dtProtocolTable.length) {
         dtProtocolTable.DataTable({
             // ajax: assetPath + 'data/rec-app/protocol-list-data.json',
-            ajax: 'get_protocols',
+            ajax: 'get_protocol_list',
             columns: [
-                { data: 'id' },
-                { data: 'project_title' },
-                { data: 'study_type' },
+                { data: 'protocolKey' },
+                { data: 'title' },
                 { data: 'status' },
+                { data: 'review' },
                 { data: '' },
             ],
             columnDefs: [
@@ -41,40 +45,42 @@ $(function () {
                     targets: 1,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $title = full['project_title'];
+                        var $title = full['title'];
+                        var $id = full['protocolKey'];
                         return '<div class="d-flex flex-column">' +
                             '<a href="' +
-                            userView +
+                            protocolView +
+                            $id +
                             '" class="text-truncate"><span class="font-weight-bold">' +
-                            ($title.length > 80) ? $title.substr(0, 80-1) + '&hellip;' : $title +
+                            $title +
                             '</span></a></div>';
                     }
                 },
-                {
-                    // Type
-                    targets: 2,
-                    render: function (data, type, full, meta) {
-                        var $type = full['study_type'];
-                        var typeBadgeObj = {
-                            "Clinical Trial": feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary mr-50' }),
-                            "Clinical Trials": feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning mr-50' }),
-                            "Health Operations Research": feather.icons['database'].toSvg({ class: 'font-medium-3 text-success mr-50' }),
-                            "Social/Behavioral Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Public Health/Epidemiologic Research": feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger mr-50' }),
-                            "Biomedical Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Stem Cell Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                            "Genetic Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
-                        };
-                        return "<span class='text-truncate align-middle'>" + typeBadgeObj[$type] + $type + '</span>';
-                    }
-                },
+                // {
+                //     // Type
+                //     targets: 2,
+                //     render: function (data, type, full, meta) {
+                //         var $type = full['studySite'];
+                //         var typeBadgeObj = {
+                //             "Clinical Trial": feather.icons['user'].toSvg({ class: 'font-medium-3 text-primary mr-50' }),
+                //             "Clinical Trials": feather.icons['settings'].toSvg({ class: 'font-medium-3 text-warning mr-50' }),
+                //             "Health Operations Research": feather.icons['database'].toSvg({ class: 'font-medium-3 text-success mr-50' }),
+                //             "Social/Behavioral Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Public Health/Epidemiologic Research": feather.icons['slack'].toSvg({ class: 'font-medium-3 text-danger mr-50' }),
+                //             "Biomedical Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Stem Cell Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //             "Genetic Research": feather.icons['edit-2'].toSvg({ class: 'font-medium-3 text-info mr-50' }),
+                //         };
+                //         return "<span class='text-truncate align-middle'>" + typeBadgeObj[$type] + $type + '</span>';
+                //     }
+                // },
                 {
                     // Status
-                    targets: 3,
+                    targets: 2,
                     render: function (data, type, full, meta) {
                         var $status = full['status'];
 
-                        return (    
+                        return (
                             '<span class="badge badge-pill ' +
                             statusObj[$status].class +
                             '" text-capitalized>' +
@@ -89,6 +95,7 @@ $(function () {
                     title: 'Actions',
                     orderable: false,
                     render: function (data, type, full, meta) {
+                        var $id = full['protocolKey'];
                         return (
                             '<div class="btn-group">' +
                             '<a class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">' +
@@ -96,12 +103,14 @@ $(function () {
                             '</a>' +
                             '<div class="dropdown-menu dropdown-menu-right">' +
                             '<a href="' +
-                            userView +
+                            protocolView +
+                            $id +
                             '" class="dropdown-item">' +
                             feather.icons['file-text'].toSvg({ class: 'font-small-4 mr-50' }) +
                             'Details</a>' +
                             '<a href="' +
-                            userEdit +
+                            protocolEdit +
+                            $id +
                             '" class="dropdown-item">' +
                             feather.icons['archive'].toSvg({ class: 'font-small-4 mr-50' }) +
                             'Edit</a>' +
@@ -134,8 +143,8 @@ $(function () {
                 {
                     text: 'Add New Protocol',
                     className: 'add-new btn btn-primary mt-50',
-                    action: function ( e, dt, button, config ) {
-                        window.location.href = 'protocol/new';
+                    action: function (e, dt, button, config) {
+                        window.location.href = 'protocol/create';
                     },
                     // attr: {
                     //     'data-toggle': 'modal',
@@ -180,30 +189,30 @@ $(function () {
             },
             initComplete: function () {
                 // Adding role filter once table initialized
-                this.api()
-                    .columns(2)
-                    .every(function () {
-                        var column = this;
-                        var select = $(
-                            '<select id="StudyType" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Study Type </option></select>'
-                        )
-                            .appendTo('.study_type')
-                            .on('change', function () {
-                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                                column.search(val ? '^' + val + '$' : '', true, false).draw();
-                            });
+                // this.api()
+                //     .columns(2)
+                //     .every(function () {
+                //         var column = this;
+                //         var select = $(
+                //             '<select id="StudyType" class="form-control text-capitalize mb-md-0 mb-2"><option value=""> Study Type </option></select>'
+                //         )
+                //             .appendTo('.study_type')
+                //             .on('change', function () {
+                //                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                //                 column.search(val ? '^' + val + '$' : '', true, false).draw();
+                //             });
 
-                        column
-                            .data()
-                            .unique()
-                            .sort()
-                            .each(function (d, j) {
-                                select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
-                            });
-                    });
+                //         column
+                //             .data()
+                //             .unique()
+                //             .sort()
+                //             .each(function (d, j) {
+                //                 select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
+                //             });
+                //     });
                 // Adding status filter once table initialized
                 this.api()
-                    .columns(3)
+                    .columns(2)
                     .every(function () {
                         var column = this;
                         var select = $(
@@ -222,7 +231,7 @@ $(function () {
                             .each(function (d, j) {
                                 select.append(
                                     '<option value="' +
-                                    statusObj[d].title +
+                                    d +
                                     '" class="text-capitalize">' +
                                     statusObj[d].title +
                                     '</option>'

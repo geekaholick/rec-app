@@ -78,7 +78,7 @@
                                 <form class="auth-login-form mt-2" action="<?php echo base_url(); ?>login_user" method="POST">
                                     <div class="form-group">
                                         <label class="form-label" for="login-email">Username</label>
-                                        <input class="form-control" id="login-email" type="text" name="username" placeholder="" aria-describedby="login-email" autofocus="" tabindex="1" />
+                                        <input class="form-control" id="login-email" type="text" name="email" placeholder="" aria-describedby="login-email" autofocus="" tabindex="1" />
                                     </div>
                                     <div class="form-group">
                                         <div class="d-flex justify-content-between">
