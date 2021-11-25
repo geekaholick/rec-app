@@ -82,7 +82,8 @@ class UserModel extends CI_Model{
 		$this->db->update('user', $data, array('userid' => $this->input->post('userid')));
 		return ($this->db->affected_rows() == 1) ? true: false;
 	}
-
+	
+	//this is the day
 
 }
 ?>
